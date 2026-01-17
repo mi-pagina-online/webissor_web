@@ -634,249 +634,155 @@
             }
         }
     </style>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desarrollador de Sistemas | Portafolio</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Floating background elements -->
-    <div class="floating-elements">
-        <div class="floating-element" style="width: 100px; height: 100px; top: 20%; left: 10%; animation-delay: 0s;"></div>
-        <div class="floating-element" style="width: 150px; height: 150px; top: 60%; left: 80%; animation-delay: 1s;"></div>
-        <div class="floating-element" style="width: 80px; height: 80px; top: 40%; left: 50%; animation-delay: 2s;"></div>
-        <div class="floating-element" style="width: 120px; height: 120px; top: 70%; left: 20%; animation-delay: 3s;"></div>
-    </div>
 
-    <header class="main-header">
-        <div class="header-container">
-            <div class="logo">Webissor Web</div>
-            <nav class="main-nav">
-                <ul>
-                    <li><a href="#projects">Proyectos</a></li>
-                    <li><a href="#about">Sobre Mí</a></li>
-                    <li><a href="#contact">Contacto</a></li>
-                </ul>
-            </nav>
+    <!-- HERO -->
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Sistemas Web para Control y Organización de Negocios</h1>
+            <p>
+                Desarrollo soluciones reales para negocios e instituciones:
+                registro, control de equipos, procesos internos y páginas funcionales que sí se usan.
+            </p>
+            <a href="#casos-reales" class="btn">Ver soluciones reales</a>
         </div>
     </header>
 
-    <section class="hero">
-        <div class="hero-content">
-            <h1>Transformando Ideas en Experiencias Digitales</h1>
-            <p>Diseño y desarrollo web creativo que impulsa tu presencia en línea con soluciones innovadoras y a medida.</p>
-            <a href="#projects" class="btn">Explora Mis Proyectos</a>
-        </div>
-    </section>
-
+    <!-- SOBRE MI -->
     <section class="about" id="about">
-        <div class="about-container">
-            <div class="about-img-container">
-                <img src="https://images.unsplash.com/photo-1571171637578-41bc2dd41cd2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Sobre Mí" class="about-img">
-            </div>
-            <div class="about-content">
-                <h2>Sobre Mí</h2>
-                <p>Soy un apasionado diseñador y desarrollador web con experiencia creando sitios web impactantes que no solo se ven increíbles, sino que también generan resultados.</p>
-                <p>Mi enfoque combina creatividad estratégica con tecnología de vanguardia para ofrecer soluciones web que destacan en el competitivo mundo digital actual.</p>
-                <p>Cada proyecto que emprendo recibe atención personalizada, garantizando que tu visión se traduzca perfectamente en una experiencia digital excepcional.</p>
-                <p>¿Listo para llevar tu presencia en línea al siguiente nivel? Contáctame hoy mismo para discutir cómo puedo ayudar a hacer realidad tu proyecto.</p>
-                <a href="https://wa.me/573249858782" class="whatsapp-btn" target="_blank">
-                    <i class="fab fa-whatsapp"></i> WhatsApp: 324 985 8782
-                </a>
-            </div>
-        </div>
+        <h2 class="section-title">Sobre mí</h2>
+
+        <p>
+            Soy desarrollador de software con experiencia creando sistemas web funcionales
+            para negocios pequeños e instituciones educativas.
+        </p>
+
+        <p>
+            He desarrollado soluciones reales como sistemas de control de ingreso y salida
+            de equipos, registros internos y páginas web orientadas al uso práctico,
+            no solo al diseño visual.
+        </p>
+
+        <p>
+            Mi enfoque es simple: crear software que ayude a organizar procesos,
+            ahorrar tiempo y evitar pérdidas.
+        </p>
+
+        <p>
+            Si necesitas una solución sencilla, clara y funcional, puedo ayudarte.
+        </p>
     </section>
 
-    <section class="projects" id="projects">
-        <h2 class="section-title">Proyectos Creativos</h2>
+    <!-- CASOS REALES -->
+    <section class="projects" id="casos-reales">
+        <h2 class="section-title">Casos reales y soluciones</h2>
+
         <div class="projects-container">
-            <!-- Proyecto 1: Galería de Arte -->
+
             <div class="project-card">
-                <div class="project-img-container">
-                    <img src="https://images.unsplash.com/photo-1565183928294-7063f23ce0f8?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Galería de Arte" class="project-img">
-                    <div class="project-overlay">
-                        <h3>Galería de Arte Creativa</h3>
-                    </div>
-                </div>
                 <div class="project-info">
-                    <h3 class="project-title">LUMINA Galería Creativa</h3>
-                    <p class="project-desc">Galería de arte contemporáneo con diseño elegante y minimalista. Presentación profesional de obras artísticas con efectos interactivos que destacan cada pieza.</p>
+                    <h3 class="project-title">
+                        Sistema de control de ingreso y salida de computadores
+                    </h3>
+
+                    <p class="project-desc">
+                        Sistema desarrollado para una institución educativa (SENA) con el objetivo
+                        de registrar el ingreso y salida de computadores, responsables y horarios,
+                        mejorando la seguridad y el orden interno.
+                    </p>
+
                     <div class="project-tech">
-                        <span class="tech-tag">HTML5</span>
-                        <span class="tech-tag">CSS3</span>
-                        <span class="tech-tag">JavaScript</span>
-                        <span class="tech-tag">Diseño Responsivo</span>
-                        <span class="tech-tag">Efectos CSS</span>
+                        <span class="tech-tag">PHP</span>
+                        <span class="tech-tag">MySQL</span>
+                        <span class="tech-tag">Registro</span>
+                        <span class="tech-tag">Control</span>
+                        <span class="tech-tag">Sistema interno</span>
                     </div>
-                    <a href="paginas/arte.html" class="project-link">Ver Proyecto Creativo</a>
+
+                    <p class="project-desc">
+                        ✔ Usado en entorno real<br>
+                        ✔ Reduce pérdidas de equipos<br>
+                        ✔ Control claro y auditable
+                    </p>
+
+                    <a href="https://wa.me/573249858782" class="project-link" target="_blank">
+                        Solicitar sistema similar
+                    </a>
                 </div>
             </div>
-            <!-- Proyecto 2:  Diseño Grafico -->
-            <div class="project-card">
-                <div class="project-img-container">
-                    <img src="https://images.unsplash.com/photo-1538688525198-9b88f6f53126?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Galería de Arte" class="project-img">
-                    <div class="project-overlay">
-                        <h3>Diseño Gráfico que Transforma Marcas</h3>
-                    </div>
-                </div>
-                <div class="project-info">
-                    <h3 class="project-title">Creativa Creación de identidades visuales</h3>
-                    <p class="project-desc">Un sitio web corporativo creativo y funcional es la carta de presentación de tu estudio de diseño gráfico. Con un diseño visualmente impactante, portfolio interactivo y navegación intuitiva, podrás captar la atención de clientes y mostrar tu talento de manera profesional.</p>
-                    <div class="project-tech">
-                        <span class="tech-tag">HTML5</span>
-                        <span class="tech-tag">CSS3</span>
-                        <span class="tech-tag">JavaScript</span>
-                        <span class="tech-tag">Diseño Responsivo</span>
-                        <span class="tech-tag">Efectos CSS</span>
-                    </div>
-                    <a href="paginas/diseño.html" class="project-link">Ver Proyecto Creativo</a>
-                </div>
-            </div>
-            
-            <!-- Proyecto 3: Fotografía -->
-            <div class="project-card">
-                <div class="project-img-container">
-                    <img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Ediciones Fotográficas" class="project-img">
-                    <div class="project-overlay">
-                        <h3>Fotografía Creativa</h3>
-                    </div>
-                </div>
-                <div class="project-info">
-                    <h3 class="project-title">FOCUS Ediciones Creativas</h3>
-                    <p class="project-desc">Portafolio para fotógrafos profesionales con galería de ediciones limitadas. Diseño limpio y creativo que resalta el trabajo visual con transiciones impactantes.</p>
-                    <div class="project-tech">
-                        <span class="tech-tag">CSS Grid</span>
-                        <span class="tech-tag">Flexbox</span>
-                        <span class="tech-tag">Efectos Hover</span>
-                        <span class="tech-tag">Diseño Minimalista</span>
-                        <span class="tech-tag">Animaciones</span>
-                    </div>
-                    <a href="paginas/photos.html" class="project-link">Ver Proyecto Creativo</a>
-                </div>
-            </div>
-            
-            <!-- Proyecto 3: Aire Acondicionado -->
-            <div class="project-card">
-                <div class="project-img-container">
-                    <img src="https://images.unsplash.com/photo-1600566752355-35792bedcfea?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Climatización" class="project-img">
-                    <div class="project-overlay">
-                        <h3>Climatización Creativa</h3>
-                    </div>
-                </div>
-                <div class="project-info">
-                    <h3 class="project-title">ClimaControl Solutions Creativas</h3>
-                    <p class="project-desc">Sitio web corporativo creativo para empresa de climatización. Diseño profesional con catálogo interactivo de productos y servicios que mejoran la experiencia del usuario.</p>
-                    <div class="project-tech">
-                        <span class="tech-tag">Diseño Corporativo</span>
-                        <span class="tech-tag">UX/UI Creativo</span>
-                        <span class="tech-tag">Formularios</span>
-                        <span class="tech-tag">Mobile First</span>
-                        <span class="tech-tag">Interactividad</span>
-                    </div>
-                    <a href="paginas/aires_acondicionados.html" class="project-link">Ver Proyecto Creativo</a>
-                </div>
-            </div>
+
         </div>
     </section>
 
-    <!-- Nueva sección de testimonios -->
-    <section class="testimonials">
-        <div class="testimonials-container">
-            <h2 class="testimonials-title">Lo que dicen nuestros clientes</h2>
-            
-            <div class="testimonials-grid">
-                <!-- Testimonio 1 -->
-                <div class="testimonial-card">
-                    <div class="testimonial-content">
-                        <p>Webissor Web transformó completamente mi presencia en línea. Su diseño creativo y atención al detalle superó todas mis expectativas. ¡Mi sitio web ahora atrae el doble de clientes!</p>
-                    </div>
-                    <div class="testimonial-author">
-                        <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="María Gómez" class="author-avatar">
-                        <div class="author-info">
-                            <h4>María Gómez</h4>
-                            <p>Dueña de Galería Lumina</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Testimonio 2 -->
-                <div class="testimonial-card">
-                    <div class="testimonial-content">
-                        <p>Increíble experiencia de trabajo. Entendieron perfectamente mi visión y la llevaron más allá de lo que imaginé. El sitio web es rápido, moderno y completamente funcional.</p>
-                    </div>
-                    <div class="testimonial-author">
-                        <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Carlos Rodríguez" class="author-avatar">
-                        <div class="author-info">
-                            <h4>Carlos Rodríguez</h4>
-                            <p>CEO de ClimaControl</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Testimonio 3 -->
-                <div class="testimonial-card">
-                    <div class="testimonial-content">
-                        <p>Como fotógrafo, necesitaba un portafolio que mostrara mi trabajo de manera profesional. Webissor Web creó exactamente lo que necesitaba con un diseño impresionante y fácil de administrar.</p>
-                    </div>
-                    <div class="testimonial-author">
-                        <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Ana Torres" class="author-avatar">
-                        <div class="author-info">
-                            <h4>Ana Torres</h4>
-                            <p>Fotógrafa profesional</p>
-                        </div>
-                    </div>
+    <!-- PROYECTOS WEB -->
+    <section class="projects" id="projects">
+        <h2 class="section-title">Proyectos web</h2>
+
+        <div class="projects-container">
+
+            <div class="project-card">
+                <div class="project-info">
+                    <h3 class="project-title">Página web para restaurante</h3>
+                    <p class="project-desc">
+                        Página web funcional para restaurante, con información clara,
+                        contacto directo y estructura sencilla.
+                    </p>
+                    <a href="#" class="project-link">Ver proyecto</a>
                 </div>
             </div>
-            
-            <!-- Formulario de comentarios -->
-            <div class="comment-form">
-                <h3>Deja tu comentario</h3>
-                <form id="commentForm">
-                    <div class="form-group">
-                        <label for="name">Nombre</label>
-                        <input type="text" id="name" class="form-control" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" class="form-control" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="comment">Tu comentario</label>
-                        <textarea id="comment" class="form-control" required></textarea>
-                    </div>
-                    <button type="submit" class="submit-btn">Enviar Comentario</button>
-                </form>
+
+            <div class="project-card">
+                <div class="project-info">
+                    <h3 class="project-title">Página web para servicios de aire acondicionado</h3>
+                    <p class="project-desc">
+                        Sitio web informativo para negocio de servicios técnicos,
+                        enfocado en contacto rápido y claridad de servicios.
+                    </p>
+                    <a href="#" class="project-link">Ver proyecto</a>
+                </div>
             </div>
+
+            <div class="project-card">
+                <div class="project-info">
+                    <h3 class="project-title">Página web para productor musical</h3>
+                    <p class="project-desc">
+                        Página web personal para mostrar trabajos, servicios y redes
+                        de un productor independiente.
+                    </p>
+                    <a href="#" class="project-link">Ver proyecto</a>
+                </div>
+            </div>
+
         </div>
     </section>
 
-    <footer class="main-footer" id="contact">
-        <div class="footer-container">
-            <div class="footer-logo">Webissor Web</div>
-            <div class="footer-links">
-                <a href="#projects">Proyectos</a>
-                <a href="#about">Sobre Mí</a>
-                <a href="https://wa.me/573249858782" target="_blank">Contacto</a>
-                <a href="#">Servicios</a>
-                <a href="#">Términos</a>
-            </div>
-            <p class="copyright">© 2023 Webissor Web. Todos los derechos reservados.</p>
-        </div>
+    <!-- CONTACTO -->
+    <section class="contact" id="contact">
+        <h2 class="section-title">Contacto</h2>
+
+        <p>
+            ¿Necesitas un sistema o una solución web funcional?
+            Escríbeme directamente.
+        </p>
+
+        <a href="https://wa.me/573249858782" class="btn" target="_blank">
+            Contactar por WhatsApp
+        </a>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <p>© 2026 - Desarrollador de Software</p>
     </footer>
 
-    <script>
-        // Manejo del formulario de comentarios
-        document.getElementById('commentForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Aquí iría el código para enviar el comentario a un servidor
-            // Por ahora solo mostraremos una alerta
-            alert('¡Gracias por tu comentario! Nos pondremos en contacto contigo pronto.');
-            
-            // Limpiar el formulario
-            this.reset();
-        });
-    </script>
 </body>
 </html>
-    </footer>
-</body>
 
-</html>
