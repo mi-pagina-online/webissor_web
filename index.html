@@ -3,17 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Webissor Web | Portafolio Digital</title>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <title>Anderson | Webissor - Soluciones Web para Negocios</title>
+
+    <!-- Meta tags para SEO -->
+    <meta name="description" content="Anderson, desarrollador de Webissor, especializado en sistemas web para control y organización de negocios e instituciones. Creador de SICAD.">
+    <meta name="keywords" content="desarrollo web, sistemas de control, software para negocios, SICAD, control de acceso, Webissor">
+    <meta name="author" content="Anderson - Webissor">
+
+    <!-- Open Graph / Redes Sociales -->
+    <meta property="og:title" content="Anderson | Webissor - Soluciones Web para Negocios">
+    <meta property="og:description" content="Sistemas web funcionales para control y organización. Creador de SICAD.">
+    <meta property="og:image" content="https://scontent.fbog14-1.fna.fbcdn.net/v/t39.30808-6/536270223_122120744060952292_6521521680505126846_n.jpg">
+
+    <!-- Fuentes e iconos -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     <style>
+        /* Variables y reset mejorados */
         :root {
-            --primary: #00f0ff;
-            --secondary: #0088ff;
-            --accent: #ff00e4;
-            --dark: #0a0a1a;
-            --light: #f0f8ff;
-            --text: #e0f2fe;
-            --text-dark: #1e293b;
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --secondary: #7c3aed;
+            --accent: #db2777;
+            --dark: #0f172a;
+            --darker: #020617;
+            --light: #f8fafc;
+            --gray: #94a3b8;
+            --success: #10b981;
+            --gradient: linear-gradient(135deg, var(--primary), var(--secondary));
+            --gradient-accent: linear-gradient(135deg, var(--secondary), var(--accent));
+            --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+            --shadow-colored: 0 10px 25px -5px rgba(37, 99, 235, 0.3);
         }
 
         * {
@@ -22,54 +45,64 @@
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
-            font-family: 'Roboto', sans-serif;
-            color: var(--text);
+            font-family: 'Inter', sans-serif;
+            color: var(--light);
             line-height: 1.6;
-            background-color: var(--dark);
+            background: var(--darker);
             overflow-x: hidden;
-            background-image: 
-                radial-gradient(circle at 20% 30%, rgba(0, 240, 255, 0.1) 0%, transparent 20%),
-                radial-gradient(circle at 80% 70%, rgba(255, 0, 228, 0.1) 0%, transparent 20%);
         }
 
-        h1, h2, h3 {
-            font-family: 'Orbitron', sans-serif;
-            font-weight: 700;
-            letter-spacing: 1px;
-        }
-
-        /* Animaciones */
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-20px); }
-        }
-
-        @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.7; }
-        }
-
-        @keyframes neon {
-            0% { text-shadow: 0 0 5px var(--primary), 0 0 10px var(--primary), 0 0 15px var(--primary); }
-            100% { text-shadow: 0 0 10px var(--primary), 0 0 20px var(--primary), 0 0 30px var(--primary); }
-        }
-
-        /* Header */
-        .main-header {
-            background-color: rgba(10, 10, 26, 0.9);
-            color: white;
-            padding: 1.5rem 0;
+        /* Efectos de fondo */
+        .noise {
             position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            opacity: 0.05;
+            pointer-events: none;
+            z-index: -1;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+        }
+
+        .gradient-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: radial-gradient(circle at 20% 30%, rgba(37, 99, 235, 0.15) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 70%, rgba(124, 58, 237, 0.15) 0%, transparent 50%);
+            z-index: -2;
+        }
+
+        /* Header mejorado */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
             width: 100%;
             z-index: 1000;
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(0, 240, 255, 0.2);
-            box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
+            padding: 1rem 0;
+            transition: all 0.3s;
+            background: rgba(2, 6, 23, 0.8);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(37, 99, 235, 0.2);
+        }
+
+        .header.scrolled {
+            padding: 0.5rem 0;
+            background: rgba(2, 6, 23, 0.95);
+            box-shadow: var(--shadow-lg);
         }
 
         .header-container {
-            max-width: 1200px;
+            max-width: 1280px;
             margin: 0 auto;
             padding: 0 2rem;
             display: flex;
@@ -77,296 +110,399 @@
             align-items: center;
         }
 
-        .logo {
-            font-size: 2rem;
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo-img {
+            width: 45px;
+            height: 45px;
+            border-radius: 12px;
+            object-fit: cover;
+            border: 2px solid var(--primary);
+            transition: transform 0.3s;
+        }
+
+        .logo-img:hover {
+            transform: scale(1.05);
+        }
+
+        .logo-text {
+            font-size: 1.5rem;
             font-weight: 700;
-            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            background: var(--gradient);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
-            animation: neon 2s infinite alternate;
+            letter-spacing: -0.5px;
         }
 
-        .main-nav ul {
+        .nav-menu {
             display: flex;
+            gap: 2.5rem;
             list-style: none;
-            gap: 2rem;
         }
 
-        .main-nav a {
-            color: var(--text);
+        .nav-link {
+            color: var(--light);
             text-decoration: none;
             font-weight: 500;
+            font-size: 0.95rem;
             transition: all 0.3s;
             position: relative;
             padding: 0.5rem 0;
         }
 
-        .main-nav a::after {
+        .nav-link::after {
             content: '';
             position: absolute;
             bottom: 0;
             left: 0;
             width: 0;
             height: 2px;
-            background: linear-gradient(90deg, var(--primary), var(--accent));
+            background: var(--gradient);
             transition: width 0.3s;
         }
 
-        .main-nav a:hover::after {
-            width: 100%;
-        }
-
-        .main-nav a:hover {
+        .nav-link:hover {
             color: var(--primary);
         }
 
-        /* Hero Section */
-        .hero {
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 0 2rem;
-            position: relative;
-            overflow: hidden;
+        .nav-link:hover::after {
+            width: 100%;
         }
 
-        .hero-content {
-            max-width: 800px;
-            position: relative;
-            z-index: 10;
-        }
-
-        .hero h1 {
-            font-size: 4rem;
-            margin-bottom: 1.5rem;
-            line-height: 1.2;
-            background: linear-gradient(90deg, var(--primary), var(--secondary));
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            animation: neon 2s infinite alternate;
-        }
-
-        .hero p {
-            font-size: 1.3rem;
-            margin-bottom: 2.5rem;
-            opacity: 0.9;
-        }
-
-        .btn {
-            display: inline-block;
-            background: linear-gradient(45deg, var(--primary), var(--secondary));
-            color: var(--dark);
-            padding: 1rem 2.5rem;
-            border: none;
+        .btn-contacto {
+            background: var(--gradient);
+            color: white;
+            padding: 0.75rem 1.5rem;
             border-radius: 50px;
             text-decoration: none;
             font-weight: 600;
-            font-size: 1.1rem;
+            font-size: 0.95rem;
             transition: all 0.3s;
-            box-shadow: 0 5px 15px rgba(0, 240, 255, 0.3);
+            box-shadow: var(--shadow-colored);
+        }
+
+        .btn-contacto:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 30px -5px rgba(37, 99, 235, 0.5);
+        }
+
+        /* Hero Section mejorado */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 6rem 2rem 4rem;
             position: relative;
             overflow: hidden;
         }
 
-        .btn:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 240, 255, 0.5);
+        .hero-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 4rem;
+            align-items: center;
         }
 
-        .btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
+        .hero-badge {
+            display: inline-block;
+            background: rgba(37, 99, 235, 0.1);
+            color: var(--primary);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            border: 1px solid rgba(37, 99, 235, 0.3);
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, #fff, var(--gray));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .hero-title span {
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            display: inline-block;
+        }
+
+        .hero-description {
+            font-size: 1.1rem;
+            color: var(--gray);
+            margin-bottom: 2.5rem;
+            max-width: 600px;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary);
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 0.85rem;
+            color: var(--gray);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn-primary {
+            background: var(--gradient);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            box-shadow: var(--shadow-colored);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 20px 35px -5px rgba(37, 99, 235, 0.5);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--light);
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            border: 2px solid rgba(37, 99, 235, 0.5);
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-outline:hover {
+            border-color: var(--primary);
+            background: rgba(37, 99, 235, 0.1);
+        }
+
+        .hero-image {
+            position: relative;
+        }
+
+        .hero-image img {
             width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-            transition: 0.5s;
+            max-width: 500px;
+            border-radius: 30px;
+            box-shadow: var(--shadow-lg);
+            border: 2px solid rgba(37, 99, 235, 0.3);
+            animation: float 6s ease-in-out infinite;
         }
 
-        .btn:hover::before {
-            left: 100%;
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
         }
 
-        /* Floating Elements */
-        .floating-elements {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-            z-index: 1;
-        }
-
-        .floating-element {
-            position: absolute;
-            background: rgba(0, 240, 255, 0.1);
-            border: 1px solid rgba(0, 240, 255, 0.3);
-            border-radius: 50%;
-            animation: float 6s infinite ease-in-out;
-        }
-
-        /* About Section */
+        /* Sección Sobre Mí mejorada */
         .about {
-            padding: 8rem 0;
-            position: relative;
-            background: rgba(15, 15, 35, 0.7);
-            backdrop-filter: blur(10px);
+            padding: 6rem 2rem;
+            background: linear-gradient(135deg, var(--darker), var(--dark));
         }
 
         .about-container {
-            max-width: 1200px;
+            max-width: 1280px;
             margin: 0 auto;
-            padding: 0 2rem;
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 4rem;
             align-items: center;
         }
 
-        .about-img-container {
+        .about-image {
             position: relative;
-            height: 400px;
-            border-radius: 15px;
+            border-radius: 30px;
             overflow: hidden;
-            border: 2px solid var(--primary);
-            box-shadow: 0 10px 30px rgba(0, 240, 255, 0.2);
+            box-shadow: var(--shadow-lg);
+            border: 2px solid rgba(37, 99, 235, 0.3);
         }
 
-        .about-img {
+        .about-image img {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .about-image:hover img {
+            transform: scale(1.05);
+        }
+
+        .about-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.2), rgba(124, 58, 237, 0.2));
+            z-index: 1;
         }
 
         .about-content h2 {
             font-size: 2.5rem;
             margin-bottom: 1.5rem;
-            background: linear-gradient(90deg, var(--primary), var(--accent));
+            background: var(--gradient);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
         }
 
-        .about-content p {
-            margin-bottom: 1.5rem;
+        .about-text {
+            color: var(--gray);
+            margin-bottom: 2rem;
             font-size: 1.1rem;
-            line-height: 1.8;
         }
 
-        .whatsapp-btn {
-            display: inline-flex;
-            align-items: center;
-            background: #25D366;
-            color: white;
-            padding: 0.8rem 1.5rem;
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .skill-tag {
+            background: rgba(37, 99, 235, 0.1);
+            color: var(--primary);
+            padding: 0.5rem 1rem;
             border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            margin-top: 1rem;
-            transition: all 0.3s;
+            font-size: 0.9rem;
+            font-weight: 500;
+            border: 1px solid rgba(37, 99, 235, 0.3);
         }
 
-        .whatsapp-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.4);
-        }
-
-        .whatsapp-btn i {
-            margin-right: 10px;
-            font-size: 1.2rem;
-        }
-
-        /* Projects Section */
+        /* Sección de Proyectos mejorada */
         .projects {
-            padding: 8rem 0;
-            position: relative;
+            padding: 6rem 2rem;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 4rem;
+        }
+
+        .section-badge {
+            display: inline-block;
+            background: rgba(37, 99, 235, 0.1);
+            color: var(--primary);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            border: 1px solid rgba(37, 99, 235, 0.3);
         }
 
         .section-title {
-            text-align: center;
-            margin-bottom: 5rem;
             font-size: 2.5rem;
-            background: linear-gradient(90deg, var(--primary), var(--accent));
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #fff, var(--gray));
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
-            animation: neon 2s infinite alternate;
         }
 
-        .projects-container {
-            max-width: 1200px;
+        .section-description {
+            color: var(--gray);
+            font-size: 1.1rem;
+        }
+
+        .projects-grid {
+            max-width: 1280px;
             margin: 0 auto;
-            padding: 0 2rem;
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 3rem;
+            gap: 2rem;
         }
 
         .project-card {
-            background: rgba(20, 20, 40, 0.6);
-            border-radius: 15px;
+            background: rgba(15, 23, 42, 0.6);
+            backdrop-filter: blur(12px);
+            border-radius: 24px;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-            transition: all 0.5s;
-            position: relative;
-            border: 1px solid rgba(0, 240, 255, 0.2);
-            backdrop-filter: blur(10px);
+            border: 1px solid rgba(37, 99, 235, 0.2);
+            transition: all 0.3s;
+            box-shadow: var(--shadow-sm);
         }
 
         .project-card:hover {
-            transform: translateY(-15px);
-            box-shadow: 0 15px 40px rgba(0, 240, 255, 0.2);
+            transform: translateY(-8px);
             border-color: var(--primary);
+            box-shadow: var(--shadow-lg);
         }
 
-        .project-img-container {
+        .project-image {
+            width: 100%;
             height: 200px;
             overflow: hidden;
             position: relative;
         }
 
-        .project-img {
+        .project-image img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             transition: transform 0.5s;
         }
 
-        .project-card:hover .project-img {
+        .project-card:hover .project-image img {
             transform: scale(1.1);
         }
 
-        .project-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(to top, rgba(10, 10, 26, 0.9), transparent);
-            display: flex;
-            align-items: flex-end;
-            padding: 1.5rem;
-        }
-
-        .project-info {
+        .project-content {
             padding: 2rem;
         }
 
         .project-title {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: var(--primary);
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+            color: white;
         }
 
         .project-desc {
+            color: var(--gray);
+            font-size: 0.95rem;
             margin-bottom: 1.5rem;
-            opacity: 0.8;
         }
 
         .project-tech {
@@ -376,545 +512,636 @@
             margin-bottom: 1.5rem;
         }
 
-        .tech-tag {
-            background: rgba(0, 240, 255, 0.1);
+        .tech-item {
+            background: rgba(37, 99, 235, 0.1);
             color: var(--primary);
-            padding: 0.3rem 0.8rem;
+            padding: 0.25rem 0.75rem;
             border-radius: 50px;
             font-size: 0.8rem;
-            border: 1px solid var(--primary);
+            border: 1px solid rgba(37, 99, 235, 0.3);
         }
 
         .project-link {
-            display: inline-block;
             color: var(--primary);
             text-decoration: none;
             font-weight: 600;
-            transition: all 0.3s;
-            position: relative;
-            padding-bottom: 5px;
-        }
-
-        .project-link::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--primary);
-            transition: width 0.3s;
-        }
-
-        .project-link:hover::after {
-            width: 100%;
-        }
-
-        /* Testimonials Section */
-        .testimonials {
-            padding: 6rem 0;
-            background: rgba(20, 20, 40, 0.7);
-            backdrop-filter: blur(10px);
-        }
-
-        .testimonials-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-
-        .testimonials-title {
-            text-align: center;
-            margin-bottom: 5rem;
-            font-size: 2.5rem;
-            background: linear-gradient(90deg, var(--primary), var(--accent));
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            animation: neon 2s infinite alternate;
-        }
-
-        .testimonials-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .testimonial-card {
-            background: rgba(30, 30, 60, 0.6);
-            padding: 2rem;
-            border-radius: 15px;
-            border: 1px solid rgba(0, 240, 255, 0.2);
-            transition: all 0.3s;
-            backdrop-filter: blur(5px);
-        }
-
-        .testimonial-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 10px 30px rgba(0, 240, 255, 0.2);
-            border-color: var(--primary);
-        }
-
-        .testimonial-content {
-            margin-bottom: 1.5rem;
-            font-style: italic;
-            position: relative;
-        }
-
-        .testimonial-content::before,
-        .testimonial-content::after {
-            content: '"';
-            color: var(--primary);
-            font-size: 1.5rem;
-            opacity: 0.5;
-        }
-
-        .testimonial-author {
-            display: flex;
+            display: inline-flex;
             align-items: center;
+            gap: 0.5rem;
+            transition: gap 0.3s;
         }
 
-        .author-avatar {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            margin-right: 1rem;
-            object-fit: cover;
-            border: 2px solid var(--primary);
+        .project-link:hover {
+            gap: 1rem;
         }
 
-        .author-info h4 {
-            color: var(--primary);
-            margin-bottom: 0.3rem;
-        }
-
-        .author-info p {
-            font-size: 0.9rem;
-            opacity: 0.7;
-        }
-
-        .comment-form {
-            max-width: 800px;
-            margin: 5rem auto 0;
-            background: rgba(30, 30, 60, 0.6);
-            padding: 2.5rem;
-            border-radius: 15px;
-            border: 1px solid rgba(0, 240, 255, 0.2);
-            backdrop-filter: blur(5px);
-        }
-
-        .comment-form h3 {
-            text-align: center;
-            margin-bottom: 2rem;
-            color: var(--primary);
-            font-size: 1.8rem;
-        }
-
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            color: var(--primary);
-        }
-
-        .form-control {
-            width: 100%;
-            padding: 1rem;
-            background: rgba(10, 10, 26, 0.5);
-            border: 1px solid rgba(0, 240, 255, 0.3);
-            border-radius: 8px;
-            color: var(--text);
-            font-family: 'Roboto', sans-serif;
-            transition: all 0.3s;
-        }
-
-        .form-control:focus {
-            outline: none;
-            border-color: var(--primary);
-            box-shadow: 0 0 10px rgba(0, 240, 255, 0.3);
-        }
-
-        textarea.form-control {
-            min-height: 150px;
-            resize: vertical;
-        }
-
-        .submit-btn {
-            background: linear-gradient(45deg, var(--primary), var(--secondary));
-            color: var(--dark);
-            padding: 1rem 2rem;
-            border: none;
-            border-radius: 50px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s;
-            display: block;
-            margin: 0 auto;
-            width: 200px;
-            text-align: center;
-        }
-
-        .submit-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0, 240, 255, 0.4);
-        }
-
-        /* Footer */
-        .main-footer {
-            background: rgba(10, 10, 26, 0.9);
-            color: white;
-            padding: 3rem 0;
-            text-align: center;
+        /* Estilos para el contenedor del video */
+        .video-container {
             position: relative;
-            border-top: 1px solid rgba(0, 240, 255, 0.2);
+            width: 100%;
+            padding-bottom: 56.25%; /* Relación de aspecto 16:9 */
+            height: 0;
+            overflow: hidden;
+            border-radius: 16px;
+            box-shadow: var(--shadow-lg);
+            border: 2px solid rgba(37, 99, 235, 0.3);
+            background: var(--darker);
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Footer mejorado */
+        .footer {
+            background: var(--darker);
+            padding: 4rem 2rem 2rem;
+            border-top: 1px solid rgba(37, 99, 235, 0.2);
         }
 
         .footer-container {
-            max-width: 1200px;
+            max-width: 1280px;
             margin: 0 auto;
-            padding: 0 2rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1.5fr;
+            gap: 4rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-info p {
+            color: var(--gray);
+            margin: 1rem 0;
         }
 
         .footer-logo {
-            font-size: 2rem;
-            margin-bottom: 1.5rem;
-            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-logo img {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            object-fit: cover;
+        }
+
+        .footer-logo span {
+            font-size: 1.25rem;
+            font-weight: 700;
+            background: var(--gradient);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
-            display: inline-block;
+        }
+
+        .footer-title {
+            color: white;
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
         }
 
         .footer-links {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin-bottom: 2rem;
-            flex-wrap: wrap;
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.75rem;
         }
 
         .footer-links a {
-            color: var(--text);
+            color: var(--gray);
             text-decoration: none;
             transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
         }
 
         .footer-links a:hover {
             color: var(--primary);
+            transform: translateX(5px);
         }
 
-        .copyright {
-            font-size: 0.9rem;
-            opacity: 0.7;
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            background: rgba(37, 99, 235, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s;
+            border: 1px solid rgba(37, 99, 235, 0.3);
+        }
+
+        .social-link:hover {
+            background: var(--gradient);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(37, 99, 235, 0.2);
+            color: var(--gray);
         }
 
         /* Responsive */
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.5rem;
+        @media (max-width: 1024px) {
+            .hero-container {
+                grid-template-columns: 1fr;
+                text-align: center;
             }
+
+            .hero-description {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            .hero-stats {
+                justify-content: center;
+            }
+
             .about-container {
                 grid-template-columns: 1fr;
             }
-            .projects-container {
-                grid-template-columns: 1fr;
-            }
-            .main-nav ul {
-                gap: 1rem;
-            }
-            .comment-form {
-                padding: 1.5rem;
+
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
             }
         }
+
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Animaciones adicionales */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fadeInUp {
+            animation: fadeInUp 0.6s ease-out;
+        }
     </style>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <!-- Floating background elements -->
-    <div class="floating-elements">
-        <div class="floating-element" style="width: 100px; height: 100px; top: 20%; left: 10%; animation-delay: 0s;"></div>
-        <div class="floating-element" style="width: 150px; height: 150px; top: 60%; left: 80%; animation-delay: 1s;"></div>
-        <div class="floating-element" style="width: 80px; height: 80px; top: 40%; left: 50%; animation-delay: 2s;"></div>
-        <div class="floating-element" style="width: 120px; height: 120px; top: 70%; left: 20%; animation-delay: 3s;"></div>
-    </div>
+    <div class="noise"></div>
+    <div class="gradient-bg"></div>
 
-    <header class="main-header">
+    <!-- Header mejorado -->
+    <header class="header" id="header">
         <div class="header-container">
-            <div class="logo">Webissor Web</div>
-            <nav class="main-nav">
-                <ul>
-                    <li><a href="#projects">Proyectos</a></li>
-                    <li><a href="#about">Sobre Mí</a></li>
-                    <li><a href="#contact">Contacto</a></li>
+            <div class="logo-container">
+                <img src="https://scontent.fbog14-1.fna.fbcdn.net/v/t39.30808-6/536270223_122120744060952292_6521521680505126846_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=1d70fc&_nc_eui2=AeEcm2OwMyfNPW8PPm7Rf2gVv_l4PHV_gL-_-Xg8dX-Av4odugJ0RrGVOyUp69ExAMkkK4ai4KzoTfmktIaiPb-k&_nc_ohc=dmuFKgWrf-IQ7kNvwF5SgHy&_nc_oc=AdlOSbOiTd7jxrcl-tBHJIrenh_tw6CirpM2WJTm_5G8Fu6g1gW1TVSqvvqGrWzpx1g&_nc_zt=23&_nc_ht=scontent.fbog14-1.fna&_nc_gid=vTcO1m_s4dIOy96rSsiAjQ&_nc_ss=8&oh=00_AfwQI0DGoAEzjetb8I8aBsioP-Qt6z4gHmpOtQsiFe_ViQ&oe=69BFC100"
+                     alt="Webissor Logo"
+                     class="logo-img"
+                     onerror="this.src='https://via.placeholder.com/45/2563eb/ffffff?text=W'">
+                <span class="logo-text">Webissor</span>
+            </div>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="#inicio" class="nav-link">Inicio</a></li>
+                    <li><a href="#sobre-mi" class="nav-link">Sobre Mí</a></li>
+                    <li><a href="#proyectos" class="nav-link">Proyectos</a></li>
+                    <li><a href="#casos-reales" class="nav-link">Casos Reales</a></li>
                 </ul>
             </nav>
+            <a href="https://wa.me/573249858782" class="btn-contacto" target="_blank">
+                <i class="fab fa-whatsapp"></i> Contactar
+            </a>
         </div>
     </header>
 
-    <section class="hero">
-        <div class="hero-content">
-            <h1>Sistemas Web para Control y Organización de Negocios</h1>
-<p>
-Desarrollo soluciones reales para negocios e instituciones: 
-registro, control de equipos, procesos internos y páginas funcionales que sí se usan.
-</p>
-<a href="#casos-reales" class="btn">Ver soluciones reales</a>
-
+    <!-- Hero Section -->
+    <section class="hero" id="inicio">
+        <div class="hero-container">
+            <div class="hero-content fadeInUp">
+                <span class="hero-badge">
+                    <i class="fas fa-code"></i> Anderson | Desarrollador Full Stack
+                </span>
+                <h1 class="hero-title">
+                    Sistemas Web para <span>Control y Organización</span> de Negocios
+                </h1>
+                <p class="hero-description">
+                    Desarrollo soluciones reales para negocios e instituciones: registro, control de equipos,
+                    procesos internos y páginas funcionales que sí se usan. Creador de <strong>SICAD</strong>.
+                </p>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">2+</span>
+                        <span class="stat-label">Años Exp.</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">50+</span>
+                        <span class="stat-label">Proyectos</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">100%</span>
+                        <span class="stat-label">Clientes Satisfechos</span>
+                    </div>
+                </div>
+                <div class="hero-buttons">
+                    <a href="#proyectos" class="btn-primary">
+                        <i class="fas fa-eye"></i> Ver Proyectos
+                    </a>
+                    <a href="https://wa.me/573249858782" class="btn-outline">
+                        <i class="fas fa-calendar"></i> Agendar Reunión
+                    </a>
+                </div>
+            </div>
+            <div class="hero-image fadeInUp" style="animation-delay: 0.2s;">
+                <img src="https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                     alt="Desarrollo Web">
+            </div>
         </div>
     </section>
 
-    <section class="about" id="about">
+    <!-- Sobre Mí mejorado -->
+    <section class="about" id="sobre-mi">
         <div class="about-container">
-            <div class="about-img-container">
-                <img src="https://images.unsplash.com/photo-1571171637578-41bc2dd41cd2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Sobre Mí" class="about-img">
+            <div class="about-image">
+                <img src="https://images.unsplash.com/photo-1571171637578-41bc2dd41cd2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                     alt="Sobre Mí - Anderson de Webissor">
             </div>
             <div class="about-content">
-                <h2>Sobre Mí</h2>
-                <p>
-Soy desarrollador de software con experiencia creando sistemas web funcionales
-para negocios pequeños e instituciones educativas.
-</p>
-<p>
-He trabajado en soluciones reales como sistemas de control de equipos,
-registros internos y páginas web orientadas a resolver problemas concretos,
-no solo al diseño visual.
-</p>
-<p>
-Mi enfoque es crear software que ayude a organizar procesos,
-ahorrar tiempo y evitar pérdidas.
-</p>
-
-                <a href="https://wa.me/573249858782?text=Hola%20vi%20tu%20portafolio%20y%20me%20interesa%20una%20solución%20web%20para%20organizar%20y%20controlar%20procesos.%20Quisiera%20más%20información." 
-class="whatsapp-btn" 
-target="_blank">
-    <i class="fab fa-whatsapp"></i> WhatsApp: 324 985 8782
-</a>
-
+                <span class="hero-badge">
+                    <i class="fas fa-user"></i> Sobre Mí
+                </span>
+                <h2>Hola, soy Anderson</h2>
+                <p class="about-text">
+                    Soy desarrollador de software con experiencia creando sistemas web funcionales
+                    para negocios pequeños e instituciones educativas. Me especializo en soluciones
+                    prácticas que resuelven problemas reales, como mi proyecto <strong>SICAD (Sistema Inteligente de Control de Acceso Digital)</strong>.
+                </p>
+                <p class="about-text">
+                    He trabajado en proyectos como sistemas de control de equipos, registros internos
+                    y páginas web orientadas a optimizar procesos y evitar pérdidas.
+                </p>
+                <div class="skills">
+                    <span class="skill-tag">PHP</span>
+                    <span class="skill-tag">MySQL</span>
+                    <span class="skill-tag">JavaScript</span>
+                    <span class="skill-tag">HTML5/CSS3</span>
+                    <span class="skill-tag">Sistemas de Control</span>
+                    <span class="skill-tag">Bases de Datos</span>
+                    <span class="skill-tag">APIs REST</span>
+                    <span class="skill-tag">Git</span>
+                </div>
+                <a href="https://wa.me/573249858782" class="btn-primary" target="_blank">
+                    <i class="fab fa-whatsapp"></i> Conversemos
+                </a>
             </div>
         </div>
     </section>
 
-<section class="projects" id="casos-reales">
-    <h2 class="section-title">Casos Reales y Soluciones</h2>
+    <!-- Caso Real destacado: SICAD -->
+<section class="projects" id="casos-reales" style="background: var(--dark);">
+    <div class="section-header">
+        <span class="section-badge">
+            <i class="fas fa-star"></i> Caso de Éxito: SICAD
+        </span>
+        <h2 class="section-title">Sistema Inteligente de Control de Acceso Digital</h2>
+        <p class="section-description">
+            Una solución real implementada para el control de ingreso y salida de equipos.
+        </p>
+    </div>
 
-    <div class="projects-container">
-
-        <div class="project-card">
-            <div class="project-info">
-                <h3 class="project-title">Sistema de control de ingreso y salida de computadores</h3>
-
-                <p class="project-desc">
-                    Sistema desarrollado para una institución educativa (SENA) con el objetivo de 
-                    registrar y controlar el ingreso y salida de equipos de cómputo, responsables y horarios,
-                    mejorando la seguridad y el orden interno.
+    <div style="max-width: 900px; margin: 0 auto;">
+        <div class="project-card" style="text-align: center; padding: 2rem;">
+            <div class="project-content">
+                <i class="fas fa-building" style="font-size: 3rem; color: var(--primary); margin-bottom: 1rem;"></i>
+                <h3 class="project-title">SICAD: Control de ingreso y salida de computadores</h3>
+                <p class="project-desc" style="font-size: 1.1rem; margin-bottom: 2rem;">
+                    Desarrollado por Anderson para instituciones educativas como el SENA. El sistema registra y controla
+                    el ingreso y salida de equipos de cómputo, asignando responsables y horarios para mejorar la seguridad y el orden interno.
                 </p>
 
-                <div class="project-tech">
-                    <span class="tech-tag">PHP</span>
-                    <span class="tech-tag">MySQL</span>
-                    <span class="tech-tag">Registro</span>
-                    <span class="tech-tag">Control</span>
-                    <span class="tech-tag">Sistema interno</span>
+                <!-- Video de Google Drive con miniatura interactiva -->
+                <div style="margin: 2rem auto; max-width: 560px;">
+                    <a href="https://drive.google.com/file/d/1RF3azYeR8uytxScntUbiz84Us9EQ4vA_/view?usp=sharing" 
+                       target="_blank" 
+                       style="text-decoration: none; display: block;">
+                        <div style="position: relative; width: 100%; padding-bottom: 56.25%; background: linear-gradient(135deg, var(--primary), var(--secondary)); border-radius: 16px; overflow: hidden; box-shadow: var(--shadow-lg);">
+                            <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; background: rgba(2, 6, 23, 0.85); backdrop-filter: blur(4px);">
+                                <i class="fas fa-play-circle" style="font-size: 5rem; color: white; margin-bottom: 1rem; text-shadow: 0 0 20px rgba(37, 99, 235, 0.5);"></i>
+                                <span style="color: white; font-size: 1.2rem; font-weight: 600; background: var(--gradient); padding: 0.5rem 1.5rem; border-radius: 50px;">Ver video en Google Drive</span>
+                                <span style="color: var(--gray); margin-top: 1rem; font-size: 0.9rem;">Haz clic para ver el sistema SICAD en acción</span>
+                            </div>
+                        </div>
+                    </a>
+                    <p style="text-align: center; margin-top: 1rem; color: var(--gray); font-size: 0.9rem;">
+                        <i class="fas fa-shield-alt"></i> Video demostrativo del sistema funcionando
+                    </p>
                 </div>
 
-                <p class="project-desc">
-                    ✔ Usado en entorno real<br>
-                    ✔ Reduce pérdidas de equipos<br>
-                    ✔ Control claro y auditable
-                </p>
-
-                <a href="https://wa.me/573249858782?text=Hola%20vi%20tu%20portafolio%20y%20me%20interesa%20una%20solución%20web%20para%20organizar%20y%20controlar%20procesos.%20Quisiera%20más%20información." 
-class="project-link" 
-target="_blank">
-    Solicitar sistema similar
-</a>
-
+                <div class="project-tech" style="justify-content: center; margin: 2rem 0;">
+                    <span class="tech-item">PHP</span>
+                    <span class="tech-item">MySQL</span>
+                    <span class="tech-item">Registro Digital</span>
+                    <span class="tech-item">Control de Acceso</span>
+                    <span class="tech-item">Sistema Interno</span>
+                </div>
+                
+                <div style="margin: 2rem 0; text-align: left; background: rgba(37, 99, 235, 0.1); padding: 1.5rem; border-radius: 16px;">
+                    <p style="margin-bottom: 0.5rem;">✔ Usado en entorno real (SENA)</p>
+                    <p style="margin-bottom: 0.5rem;">✔ Reduce pérdidas y mejora el control de equipos</p>
+                    <p>✔ Registro claro, auditable y con responsables</p>
+                </div>
+                
+                <a href="https://wa.me/573249858782?text=Hola%20Anderson,%20vi%20tu%20video%20de%20SICAD%20en%20tu%20portafolio%20y%20me%20interesa%20un%20sistema%20similar%20para%20mi%20institución."
+                   class="btn-primary"
+                   target="_blank">
+                    <i class="fab fa-whatsapp"></i> Solicitar sistema similar
+                </a>
             </div>
         </div>
-
     </div>
 </section>
+    <!-- Otros Proyectos -->
+    <section class="projects" id="proyectos">
+        <div class="section-header">
+            <span class="section-badge">
+                <i class="fas fa-code-branch"></i> Portafolio
+            </span>
+            <h2 class="section-title">Proyectos Destacados</h2>
+            <p class="section-description">
+                Una selección de mis trabajos más representativos
+            </p>
+        </div>
 
-
-    <section class="projects" id="projects">
-        <h2 class="section-title">Otros trabajos web</h2>
-        <div class="projects-container">
-            <!-- Proyecto 1: Galería de Arte -->
+        <div class="projects-grid">
+            <!-- Proyecto 1 -->
             <div class="project-card">
-                <div class="project-img-container">
-                    <img src="https://images.unsplash.com/photo-1565183928294-7063f23ce0f8?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Galería de Arte" class="project-img">
-                    <div class="project-overlay">
-                        <h3>Galería de Arte Creativa</h3>
-                    </div>
+                <div class="project-image">
+                    <img src="https://images.unsplash.com/photo-1565183928294-7063f23ce0f8?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                         alt="Galería de Arte">
                 </div>
-                <div class="project-info">
+                <div class="project-content">
                     <h3 class="project-title">LUMINA Galería Creativa</h3>
-                    <p class="project-desc">Galería de arte contemporáneo con diseño elegante y minimalista. Presentación profesional de obras artísticas con efectos interactivos que destacan cada pieza.</p>
+                    <p class="project-desc">Galería de arte contemporáneo con diseño elegante y efectos interactivos.</p>
                     <div class="project-tech">
-                        <span class="tech-tag">HTML5</span>
-                        <span class="tech-tag">CSS3</span>
-                        <span class="tech-tag">JavaScript</span>
-                        <span class="tech-tag">Diseño Responsivo</span>
-                        <span class="tech-tag">Efectos CSS</span>
+                        <span class="tech-item">HTML5</span>
+                        <span class="tech-item">CSS3</span>
+                        <span class="tech-item">JavaScript</span>
+                        <span class="tech-item">Responsive</span>
                     </div>
-                    <a href="paginas/arte.html" class="project-link">Ver Proyecto Creativo</a>
+                    <a href="paginas/arte.html" class="project-link">
+                        Ver proyecto <i class="fas fa-arrow-right"></i>
+                    </a>
                 </div>
             </div>
 
-            <!-- Proyecto 2: Diseño Grafico -->
+            <!-- Proyecto 2 -->
             <div class="project-card">
-                <div class="project-img-container">
-                    <img src="https://images.unsplash.com/photo-1538688525198-9b88f6f53126?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Galería de Arte" class="project-img">
-                    <div class="project-overlay">
-                        <h3>Diseño Gráfico que Transforma Marcas</h3>
-                    </div>
+                <div class="project-image">
+                    <img src="https://images.unsplash.com/photo-1538688525198-9b88f6f53126?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                         alt="Diseño Gráfico">
                 </div>
-                <div class="project-info">
-                    <h3 class="project-title">Creativa Creación de identidades visuales</h3>
-                    <p class="project-desc">Un sitio web corporativo creativo y funcional es la carta de presentación de tu estudio de diseño gráfico. Con un diseño visualmente impactante, portfolio interactivo y navegación intuitiva, podrás captar la atención de clientes y mostrar tu talento de manera profesional.</p>
+                <div class="project-content">
+                    <h3 class="project-title">Creativa - Estudio Diseño</h3>
+                    <p class="project-desc">Sitio corporativo para estudio de diseño gráfico con portfolio interactivo.</p>
                     <div class="project-tech">
-                        <span class="tech-tag">HTML5</span>
-                        <span class="tech-tag">CSS3</span>
-                        <span class="tech-tag">JavaScript</span>
-                        <span class="tech-tag">Diseño Responsivo</span>
-                        <span class="tech-tag">Efectos CSS</span>
+                        <span class="tech-item">HTML5</span>
+                        <span class="tech-item">CSS3</span>
+                        <span class="tech-item">JavaScript</span>
+                        <span class="tech-item">UX/UI</span>
                     </div>
-                    <a href="paginas/diseño.html" class="project-link">Ver Proyecto Creativo</a>
+                    <a href="paginas/diseño.html" class="project-link">
+                        Ver proyecto <i class="fas fa-arrow-right"></i>
+                    </a>
                 </div>
             </div>
 
-            <!-- Proyecto 3: Fotografía -->
+            <!-- Proyecto 3 -->
             <div class="project-card">
-                <div class="project-img-container">
-                    <img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Ediciones Fotográficas" class="project-img">
-                    <div class="project-overlay">
-                        <h3>Fotografía Creativa</h3>
-                    </div>
+                <div class="project-image">
+                    <img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                         alt="Fotografía">
                 </div>
-                <div class="project-info">
+                <div class="project-content">
                     <h3 class="project-title">FOCUS Ediciones Creativas</h3>
-                    <p class="project-desc">Portafolio para fotógrafos profesionales con galería de ediciones limitadas. Diseño limpio y creativo que resalta el trabajo visual con transiciones impactantes.</p>
+                    <p class="project-desc">Portafolio para fotógrafos con galería y transiciones impactantes.</p>
                     <div class="project-tech">
-                        <span class="tech-tag">CSS Grid</span>
-                        <span class="tech-tag">Flexbox</span>
-                        <span class="tech-tag">Efectos Hover</span>
-                        <span class="tech-tag">Diseño Minimalista</span>
-                        <span class="tech-tag">Animaciones</span>
+                        <span class="tech-item">CSS Grid</span>
+                        <span class="tech-item">Flexbox</span>
+                        <span class="tech-item">Animaciones</span>
                     </div>
-                    <a href="paginas/photos.html" class="project-link">Ver Proyecto Creativo</a>
+                    <a href="paginas/photos.html" class="project-link">
+                        Ver proyecto <i class="fas fa-arrow-right"></i>
+                    </a>
                 </div>
             </div>
 
-            <!-- Proyecto 4: Aire Acondicionado -->
+            <!-- Proyecto 4 -->
             <div class="project-card">
-                <div class="project-img-container">
-                    <img src="https://images.unsplash.com/photo-1600566752355-35792bedcfea?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Climatización" class="project-img">
-                    <div class="project-overlay">
-                        <h3>Climatización Creativa</h3>
-                    </div>
+                <div class="project-image">
+                    <img src="https://seduccionconvalor.github.io/LIBRO/Image_fh8r43fh8r43fh8r.png"
+                         alt="Libro Digital">
                 </div>
-                <div class="project-info">
+                <div class="project-content">
+                    <h3 class="project-title">Seducción con Valor</h3>
+                    <p class="project-desc">Plataforma de desarrollo personal con diseño persuasivo y enfocado en conversión.</p>
+                    <div class="project-tech">
+                        <span class="tech-item">Landing Page</span>
+                        <span class="tech-item">Copywriting</span>
+                        <span class="tech-item">Conversión</span>
+                    </div>
+                    <a href="https://seduccionconvalor.github.io/LIBRO/" class="project-link" target="_blank">
+                        Ver proyecto <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Proyecto 5 -->
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="https://mi-pagina-online.github.io/laconters_web/images-index/icono.png"
+                         alt="La Conters Web">
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">La Conters Web</h3>
+                    <p class="project-desc">Sitio web profesional con diseño moderno y navegación intuitiva.</p>
+                    <div class="project-tech">
+                        <span class="tech-item">Diseño Profesional</span>
+                        <span class="tech-item">Estructura Limpia</span>
+                        <span class="tech-item">UI/UX</span>
+                    </div>
+                    <a href="https://mi-pagina-online.github.io/laconters_web/" class="project-link" target="_blank">
+                        Ver proyecto <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Proyecto 6 -->
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="https://mi-pagina-online.github.io/Webissor_Design/IMAGENES/portada.png"
+                         alt="Webissor Design">
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">Webissor Design</h3>
+                    <p class="project-desc">Página creativa con animaciones suaves y diseño minimalista.</p>
+                    <div class="project-tech">
+                        <span class="tech-item">Animaciones</span>
+                        <span class="tech-item">Diseño Moderno</span>
+                        <span class="tech-item">Transiciones</span>
+                    </div>
+                    <a href="https://mi-pagina-online.github.io/Webissor_Design/" class="project-link" target="_blank">
+                        Ver proyecto <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Proyecto 3 -->
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="https://images.unsplash.com/photo-1600566752355-35792bedcfea?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                         alt="Fotografía">
+                </div>
+                <div class="project-content">
                     <h3 class="project-title">ClimaControl Solutions Creativas</h3>
                     <p class="project-desc">Sitio web corporativo creativo para empresa de climatización. Diseño profesional con catálogo interactivo de productos y servicios que mejoran la experiencia del usuario.</p>
                     <div class="project-tech">
-                        <span class="tech-tag">Diseño Corporativo</span>
-                        <span class="tech-tag">UX/UI Creativo</span>
-                        <span class="tech-tag">Formularios</span>
-                        <span class="tech-tag">Mobile First</span>
-                        <span class="tech-tag">Interactividad</span>
+                        <span class="tech-item">Diseño Corporativo</span>
+                        <span class="tech-item">UX/UI Creativo</span>
+                        <span class="tech-item">Interactividad</span>
+                        <span class="tech-item">Mobile First</span>
+                        <span class="tech-item">Formularios</span>
                     </div>
-                    <a href="paginas/aires_acondicionados.html" class="project-link">Ver Proyecto Creativo</a>
+                    <a href="paginas/aires_acondicionados.html" class="project-link">
+                        Ver proyecto <i class="fas fa-arrow-right"></i>
+                    </a>
                 </div>
             </div>
-
-            <!-- Proyecto 5: Galería de Arte -->
-            <div class="project-card">
-                <div class="project-img-container">
-                    <img src="https://seduccionconvalor.github.io/LIBRO/Image_fh8r43fh8r43fh8r.png" alt="Galería de Arte" class="project-img">
-                    <div class="project-overlay">
-                        <h3>Seducción con Valor</h3>
-                    </div>
-                </div>
-                <div class="project-info">
-                    <h3 class="project-title">Libro Digital</h3>
-                    <p class="project-desc">Plataforma enfocada en desarrollo personal y habilidades sociales con contenido visual atractivo y enfoque directo en la transformación masculina. Diseño llamativo con secciones persuasivas, contenido estructurado y enfoque en conversión.</p>
-                    <div class="project-tech">
-                        <span class="tech-tag">Landing Page</span>
-                        <span class="tech-tag">Copywriting persuasivo</span>
-                        <span class="tech-tag">Secciones dinámicas</span>
-                        <span class="tech-tag">Diseño enfocado en ventas</span>
-                        <span class="tech-tag">Contenido digital estructurado</span>
-                    </div>
-                    <a href="https://seduccionconvalor.github.io/LIBRO/" class="project-link">Ver Proyecto Creativo</a>
-                </div>
-            </div>
-
-            <!-- Proyecto 6: Diseño Grafico -->
-            <div class="project-card">
-                <div class="project-img-container">
-                    <img src="https://mi-pagina-online.github.io/laconters_web/images-index/icono.png" alt="Galería de Arte" class="project-img">
-                    <div class="project-overlay">
-                        <h3>Portafolio de Diseño Productor De Gráfico.</h3>
-                    </div>
-                </div>
-                <div class="project-info">
-                    <h3 class="project-title">La Conters Web</h3>
-                    <p class="project-desc">Sitio web moderno con estilo profesional orientado a presencia digital y marca personal. Integra elementos visuales limpios con navegación clara, destacando contenido de forma organizada y atractiva.</p>
-                    <div class="project-tech">
-                        <span class="tech-tag">Diseño Web Profesional</span>
-                        <span class="tech-tag">Estructura limpia</span>
-                        <span class="tech-tag">Navegación intuitiva</span>
-                        <span class="tech-tag">Uso de colores equilibrados</span>
-                        <span class="tech-tag">Presentación de contenido clara</span>
-                    </div>
-                    <a href="https://mi-pagina-online.github.io/laconters_web/" class="project-link">Ver Proyecto Creativo</a>
-                </div>
-            </div>
-
-            <!-- Proyecto 7: Fotografía -->
-            <div class="project-card">
-                <div class="project-img-container">
-                    <img src="https://mi-pagina-online.github.io/Webissor_Design/IMAGENES/portada.png" alt="Ediciones Fotográficas" class="project-img">
-                    <div class="project-overlay">
-                        <h3>Diseños Creativos</h3>
-                    </div>
-                </div>
-                <div class="project-info">
-                    <h3 class="project-title">Webissor Design</h3>
-                    <p class="project-desc">Página creativa orientada a diseño digital con estética moderna y enfoque visual impactante. Combina animaciones suaves con una estructura elegante que resalta proyectos y servicios.</p>
-                    <div class="project-tech">
-                        <span class="tech-tag">Animaciones suaves</span>
-                        <span class="tech-tag">Diseño moderno</span>
-                        <span class="tech-tag">Enfoque visual creativo</span>
-                        <span class="tech-tag">Transiciones dinámicas</span>
-                        <span class="tech-tag">Estética minimalista</span>
-                    </div>
-                    <a href="https://mi-pagina-online.github.io/Webissor_Design/" class="project-link">Ver Proyecto Creativo</a>
-                </div>
-            </div>
-
+            
         </div>
     </section>
 
-    <footer class="main-footer" id="contact">
+    <!-- Footer mejorado -->
+    <footer class="footer" id="contacto">
         <div class="footer-container">
-            <div class="footer-logo">Webissor Web</div>
-            <div class="footer-links">
-                <a href="#projects">Proyectos</a>
-                <a href="#about">Sobre Mí</a>
-                <a href="https://wa.me/573249858782?text=Hola%20vi%20tu%20portafolio%20y%20me%20interesa%20una%20solución%20web%20para%20organizar%20y%20controlar%20procesos.%20Quisiera%20más%20información." 
-target="_blank">
-Contacto
-</a>
+            <div class="footer-grid">
+                <div class="footer-info">
+                    <div class="footer-logo">
+                        <img src="https://scontent.fbog14-1.fna.fbcdn.net/v/t39.30808-6/536270223_122120744060952292_6521521680505126846_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=1d70fc&_nc_eui2=AeEcm2OwMyfNPW8PPm7Rf2gVv_l4PHV_gL-_-Xg8dX-Av4odugJ0RrGVOyUp69ExAMkkK4ai4KzoTfmktIaiPb-k&_nc_ohc=dmuFKgWrf-IQ7kNvwF5SgHy&_nc_oc=AdlOSbOiTd7jxrcl-tBHJIrenh_tw6CirpM2WJTm_5G8Fu6g1gW1TVSqvvqGrWzpx1g&_nc_zt=23&_nc_ht=scontent.fbog14-1.fna&_nc_gid=vTcO1m_s4dIOy96rSsiAjQ&_nc_ss=8&oh=00_AfwQI0DGoAEzjetb8I8aBsioP-Qt6z4gHmpOtQsiFe_ViQ&oe=69BFC100"
+                             alt="Webissor Logo"
+                             onerror="this.src='https://via.placeholder.com/40/2563eb/ffffff?text=W'">
+                        <span>Webissor</span>
+                    </div>
+                    <p>Soluciones web funcionales para negocios que buscan optimizar sus procesos y crecer digitalmente. Creado por Anderson.</p>
+                    <div class="social-links">
+                        <a href="https://web.facebook.com/profile.php?id=61578568769195" class="social-link" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                        <a href="https://wa.me/573249858782" class="social-link" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                        <a href="mailto:jhongonsales21@gmail.com" class="social-link"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
 
-                <a href="#">Servicios</a>
-                <a href="#">Términos</a>
+                <div>
+                    <h3 class="footer-title">Enlaces Rápidos</h3>
+                    <ul class="footer-links">
+                        <li><a href="#inicio"><i class="fas fa-chevron-right"></i> Inicio</a></li>
+                        <li><a href="#sobre-mi"><i class="fas fa-chevron-right"></i> Sobre Mí</a></li>
+                        <li><a href="#proyectos"><i class="fas fa-chevron-right"></i> Proyectos</a></li>
+                        <li><a href="#casos-reales"><i class="fas fa-chevron-right"></i> Casos Reales</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="footer-title">Servicios</h3>
+                    <ul class="footer-links">
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Sistemas de Control</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Páginas Web</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Bases de Datos</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> APIs y Backend</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="footer-title">Contacto</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-phone"></i> +57 324 985 8782</li>
+                        <li><i class="fas fa-envelope"></i> <a href="mailto:jhongonsales21@gmail.com">jhongonsales21@gmail.com</a></li>
+                        <li><i class="fas fa-map-marker-alt"></i> Bogotá / Girardot, Colombia</li>
+                    </ul>
+                </div>
             </div>
-            <p class="copyright">© 2023 Webissor Web. Todos los derechos reservados.</p>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 Webissor. Creado por Webissor web. Todos los derechos reservados. Diseñado con <i class="fas fa-heart" style="color: var(--accent);"></i> para negocios que buscan soluciones reales.</p>
+            </div>
         </div>
     </footer>
+
+    <script>
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Smooth scroll para los enlaces
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
 </body>
 </html>
